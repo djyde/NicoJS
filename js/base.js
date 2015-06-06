@@ -11,8 +11,7 @@
     var make = function(container,options){
       var div = $('<div class="bubble" />').text(options.content);
       container.prepend(div);
-      var bumb = Math.random() * 10 < 5;
-      if (!bumb) {
+      if (options.type === 'linear') {
         div.css({
           "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
