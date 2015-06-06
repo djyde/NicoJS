@@ -9,7 +9,7 @@
         div.css({
           "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
-          "color": "red",
+          "color": options.color,
           "white-space": "nowrap",
           "right": 0,
           "top": Math.random() * $(window).height()
