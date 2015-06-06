@@ -7,9 +7,10 @@
       console.log(bumb);
       if (!bumb) {
         div.css({
-          "font-size": options.fontsize + "em",
+          "font-size": options.fontsize * 1.2 + "em",
           "position": "absolute",
           "color": options.color,
+          "white-space": "nowrap",
           "top": Math.random() * $(window).height()
         })
         div.animate({
@@ -19,7 +20,7 @@
         })
       } else {
         div.css({
-          "font-size": options.fontsize + "em",
+          "font-size": options.fontsize * 1.2 + "em",
           "position":"absolute",
           "text-align": "center",
           "width": "100%",

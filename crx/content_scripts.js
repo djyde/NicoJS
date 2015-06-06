@@ -15,6 +15,7 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
           "font-size": options.fontsize + "em",
           "position": "absolute",
           "color": options.color,
+          "white-space": "nowrap",
           "top": Math.random() * $(window).height()
         })
         div.animate({

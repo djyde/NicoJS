@@ -1,9 +1,8 @@
-.test{
-  background-color: #000;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.bubble{
-  font-size: 2em;
-  position: relative;
-  
+html{
+  height: 100%;
 }
