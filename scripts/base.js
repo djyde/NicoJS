@@ -2,7 +2,7 @@
   $(document).ready(function(){
     var make = function(container,options){
       var div = $('<div class="bubble" />').text(options.content);
-      container.append(div);
+      container.prepend(div);
       var bumb = Math.random() * 10 < 5;
       console.log(bumb);
       if (!bumb) {
@@ -10,7 +10,7 @@
           "font-size": options.fontsize + "em",
           "position": "absolute",
           "color": options.color,
-          "top": Math.random() * $(document).height()
+          "top": Math.random() * $(window).height()
         })
         div.animate({
           left: $(document).width() + 100
@@ -20,9 +20,11 @@
       } else {
         div.css({
           "font-size": options.fontsize + "em",
+          "position":"absolute",
           "text-align": "center",
+          "width": "100%",
           "color": options.color,
-          "margin-top": Math.random() * $(document).height()
+          "top": Math.random() * $(window).height()
         })
         window.setTimeout(function(){
           div.remove();
