@@ -4,7 +4,7 @@
       var div = $('<div class="bubble" />').text(options.content);
       div.css({
         "font-size": options.fontsize + "em",
-        "position": "relative",
+        "position": "absolute",
         "color": options.color,
         "top": Math.random() * $(window).height()
       })
@@ -12,6 +12,7 @@
       div.animate({
         left: $(window).width()
       },options.duration,'linear',function(){
+        div.remove();
       })
     }
     // make($('#container'),{"color":"#f2ad88","fontsize":1.5729205077514052,"content":"来啦","duration":4541,"nickname":"oH_xis15rtTiWz88QL4AwWKrZEFg"});
