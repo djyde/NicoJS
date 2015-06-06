@@ -1,3 +1,9 @@
 .test{
   background-color: #000;
 }
+
+.bubble{
+  font-size: 2em;
+  position: relative;
+  
+}
