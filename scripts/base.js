@@ -34,15 +34,24 @@
     // make($('#container'),{"color":"#f2ad88","fontsize":1.5729205077514052,"content":"来啦","duration":4541,"nickname":"oH_xis15rtTiWz88QL4AwWKrZEFg"});
 
 
-    var socket = io('123.57.143.92:3000');
+    var socket = new WebSocket('ws://123.57.143.92:3000');
 
-    socket.on('connect',function(){
-      console.log('1');
-    })
+    socket.onopen = function(){
+      socket.send('ping');
+    }
 
-    socket.on('message',function(options){
-      console.log(options);
-      make($('#container'),JSON.parse(options));
-    })
+    socket.onmessage = function(e){
+      make($('body'),JSON.parse(e.data));
+    }
+
+
+    // socket.on('connect',function(){
+    //   console.log('1');
+    // })
+
+    // socket.on('message',function(options){
+    //   console.log(options);
+    //   make($('#container'),JSON.parse(options));
+    // })
   })
 })()
