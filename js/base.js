@@ -1,15 +1,22 @@
 ;(function(){
   $(document).ready(function(){
+
+    var colors = ['#FFE300','#FFFFFF','#48FFD1','red']
+
+    var random = function(min,max){
+      return Math.ceil(Math.random() * (max - min) + min);
+    }
+
+
     var make = function(container,options){
       var div = $('<div class="bubble" />').text(options.content);
       container.prepend(div);
       var bumb = Math.random() * 10 < 5;
-      console.log(bumb);
       if (!bumb) {
         div.css({
           "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
-          "color": options.color,
+          "color": colors[random(0,3)],
           "white-space": "nowrap",
           "right": 0,
           "top": Math.random() * $(window).height()
@@ -25,7 +32,7 @@
           "position":"absolute",
           "text-align": "center",
           "width": "100%",
-          "color": options.color,
+          "color": colors[random(0,3)],
           "top": Math.random() * $(window).height()
         })
         window.setTimeout(function(){
