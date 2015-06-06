@@ -1,4 +1,4 @@
-![](http://ww2.sinaimg.cn/large/62580dd9jw1esv04czzspj20pq0iqta9.jpg)
+![](http://ww4.sinaimg.cn/large/62580dd9jw1esv0d7tpmhj203k03kq2t.jpg)
 
 # NicoJS
 
