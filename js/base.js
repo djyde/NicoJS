@@ -7,14 +7,15 @@
       console.log(bumb);
       if (!bumb) {
         div.css({
-          "font-size": options.fontsize * 1.2 + "em",
+          "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
           "color": options.color,
           "white-space": "nowrap",
+          "right": 0,
           "top": Math.random() * $(window).height()
         })
         div.animate({
-          left: $(document).width() + 100
+          right: $(document).width() + 100
         },options.duration,'linear',function(){
           div.remove();
         })
@@ -29,7 +30,7 @@
         })
         window.setTimeout(function(){
           div.remove();
-        },3000);
+        },5000);
       }
       
       
