@@ -1,8 +1,6 @@
 ;(function(){
   $(document).ready(function(){
 
-    var colors = ['#FFE300','#FFFFFF','#48FFD1','red']
-
     var random = function(min,max){
       return Math.ceil(Math.random() * (max - min) + min);
     }
@@ -15,7 +13,7 @@
         div.css({
           "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
-          "color": colors[random(0,3)],
+          "color": options.color,
           "white-space": "nowrap",
           "right": 0,
           "top": Math.random() * $(window).height()
@@ -31,7 +29,7 @@
           "position":"absolute",
           "text-align": "center",
           "width": "100%",
-          "color": colors[random(0,3)],
+          "color": options.color,
           "top": Math.random() * $(window).height()
         })
         window.setTimeout(function(){
