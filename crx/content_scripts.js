@@ -5,27 +5,32 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 //# sourceMappingURL=jquery.min.map
 ;(function(){
   $(document).ready(function(){
+
+    var random = function(min,max){
+      return Math.ceil(Math.random() * (max - min) + min);
+    }
+
+
     var make = function(container,options){
       var div = $('<div class="bubble" />').text(options.content);
       container.prepend(div);
-      var bumb = Math.random() * 10 < 5;
-      console.log(bumb);
-      if (!bumb) {
+      if (options.type === 'linear') {
         div.css({
-          "font-size": options.fontsize + "em",
+          "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
           "color": options.color,
           "white-space": "nowrap",
+          "right": 0,
           "top": Math.random() * $(window).height()
         })
         div.animate({
-          left: $(document).width() + 100
+          right: $(document).width() + 100
         },options.duration,'linear',function(){
           div.remove();
         })
       } else {
         div.css({
-          "font-size": options.fontsize + "em",
+          "font-size": options.fontsize * 1.2 + "em",
           "position":"absolute",
           "text-align": "center",
           "width": "100%",
@@ -34,13 +39,9 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
         })
         window.setTimeout(function(){
           div.remove();
-        },3000);
-      }
-      
-      
+        },5000);
+      } 
     }
-    // make($('#container'),{"color":"#f2ad88","fontsize":1.5729205077514052,"content":"来啦","duration":4541,"nickname":"oH_xis15rtTiWz88QL4AwWKrZEFg"});
-
 
     var socket = new WebSocket('ws://123.57.143.92:3000');
 
@@ -51,15 +52,5 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
     socket.onmessage = function(e){
       make($('body'),JSON.parse(e.data));
     }
-
-
-    // socket.on('connect',function(){
-    //   console.log('1');
-    // })
-
-    // socket.on('message',function(options){
-    //   console.log(options);
-    //   make($('#container'),JSON.parse(options));
-    // })
   })
 })()
