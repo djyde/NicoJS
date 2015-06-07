@@ -10,3 +10,8 @@ html{
 .bubble{
   font-weight: bold;
 }
+
+body{
+  font-family: "PetalaPro","Helvetica Neue",Helvetica,"Arial","Source Han Sans CN","Hiragino Sans GB","Microsoft YaHei","Microsoft JhengHei",sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

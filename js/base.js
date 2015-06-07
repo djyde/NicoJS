@@ -11,6 +11,7 @@
       container.prepend(div);
       if (options.type === 'linear') {
         div.css({
+          "z-index": 100,
           "font-size": options.fontsize * 1.8 + "em",
           "position": "absolute",
           "color": options.color,
@@ -25,6 +26,7 @@
         })
       } else {
         div.css({
+          "z-index": 100,
           "font-size": options.fontsize * 1.2 + "em",
           "position":"absolute",
           "text-align": "center",

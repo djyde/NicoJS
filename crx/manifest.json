@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "NicoJS",
-  "version": "0.2",
+  "version": "0.3",
   "description": "web bubble",
   "browser_action":{
     "default_icon": "logo.png",
